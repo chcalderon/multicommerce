@@ -15,11 +15,14 @@ const adminSchema = new Schema({
     },
     image: {
         type: String,
-        required: true
     },
     role: {
         type: String,
         default: "admin"
+    },
+    status: {
+        type: String,
+        default: "pending"
     },
 
 })

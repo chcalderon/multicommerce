@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { get_seller_dashboard_data } from "../../store/Reducers/dashboardReducer";
+import moment from 'moment';
+import customer from '../../assets/demo.jpg'
 
 const SellerDashboard = () => {
 

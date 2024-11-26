@@ -5,6 +5,7 @@ import Pagination from '../Pagination';
 import { FaEdit, FaEye, FaTrash } from 'react-icons/fa'; 
 import { useDispatch, useSelector } from 'react-redux';
 import { get_products } from '../../store/Reducers/productReducer';
+import { LuImageMinus } from 'react-icons/lu';
 
 const Products = () => {
 

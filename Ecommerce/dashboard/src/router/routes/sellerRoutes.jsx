@@ -1,6 +1,5 @@
 import { lazy } from "react";             
-
-const SellerDashboard = lazy(()=> import('../../views/seller/SellerDashboard'))   
+const SellerDashboard = lazy(()=> import('../../views/seller/SellerDashBoard'))   
 const AddProduct = lazy(()=> import('../../views/seller/AddProduct'))   
 const Products = lazy(()=> import('../../views/seller/Products')) 
 const DiscountProducts = lazy(()=> import('../../views/seller/DiscountProducts')) 

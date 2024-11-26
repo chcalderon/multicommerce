@@ -14,7 +14,7 @@ const DashBoardApp = () => {
   // console.log(allRoutes);
   useEffect(() => {
     const routes = getRoutes()
-    console.log([...allRoutes,routes])
+    // console.log([...allRoutes,routes])
     setAllRoutes([...allRoutes,routes])
     setRoutesReady(true)
   }, [])
@@ -24,7 +24,7 @@ const DashBoardApp = () => {
         dispatch(get_user_info())
     }
 
-},[token])
+  },[token])
 
   return areRoutesReady ? 
   <Router allRoutes={allRoutes}/> :

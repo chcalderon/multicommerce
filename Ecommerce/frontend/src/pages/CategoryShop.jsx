@@ -115,10 +115,12 @@ const CategoryShop = () => {
                         {children}
                     </div>
                 )}
-                renderThumb={({ props }) => (
-                    <div className='w-[15px] h-[15px] bg-[#059473] rounded-full' {...props} />
+                renderThumb={({ props }) => { 
+                    const {key,...newprops} = props
+                    return(
+                    <div key={key} className='w-[15px] h-[15px] bg-[#059473] rounded-full' {...newprops} />
     
-                )} 
+                )}} 
              />  
          <div>
          <span className='text-slate-800 font-bold text-lg'>${Math.floor(state.values[0])} - ${Math.floor(state.values[1])}</span>  

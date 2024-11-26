@@ -33,7 +33,7 @@ const Header = ({ showSidebar, setShowSidebar }) => {
                 <span className="text-[14px] w-full font-normal">{ userInfo.role }</span>
               </div>
               {
-                userInfo.role === 'admin' ? <img className='w-[45px] h-[45px] rounded-full overflow-hidden' src="/images/admin.jpg" alt="" />  : <img className='w-[45px] h-[45px] rounded-full overflow-hidden' src={userInfo.image} alt="" />
+                userInfo.role === 'admin' ? <img className='w-[45px] h-[45px] rounded-full overflow-hidden' src={import.meta.env.VITE_DASHBOARDURL+'/images/admin.jpg'} alt="" />  : <img className='w-[45px] h-[45px] rounded-full overflow-hidden' src={userInfo.image} alt="" />
               }
             </div>
           </div>

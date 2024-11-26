@@ -9,7 +9,9 @@ const socket = require('socket.io')
 const http = require('http')
 const server = http.createServer(app)
 app.use(cors({
-    origin: ['http://localhost:3000','http://localhost:3001'],
+    origin: ['http://localhost:3000','http://localhost:3001', 
+            'https://www.ripsode.com:3000', 'https://www.ripsode.com:3001',
+            'https://ec2-3-15-45-105.us-east-2.compute.amazonaws.com:3000', 'https://ec2-3-15-45-105.us-east-2.compute.amazonaws.com:3001'],
     credentials: true
 }))
 

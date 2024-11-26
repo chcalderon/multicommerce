@@ -48,7 +48,7 @@ const Banner = () => {
                     responsive={responsive}
                 >
                 {
-                     banners.length > 0 && banners.map((b, i) => <Link key={i} to={`product/details/${b.link}`}>
+                    banners && banners.length > 0 && banners.map((b, i) => <Link key={i} to={`product/details/${b.link}`}>
                     <img src={ b.banner} alt="" />
                     </Link> )
                 }

@@ -6,7 +6,6 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { Toaster } from 'react-hot-toast';
 
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store} >
     <Suspense>

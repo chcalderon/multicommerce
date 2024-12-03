@@ -30,6 +30,23 @@ export const customer_login = createAsyncThunk(
     }
 )
 
+export const customer_logout = createAsyncThunk(
+    'auth/customer_logout',
+    async(_, { rejectWithValue,fulfillWithValue }) => {
+       
+        try {
+            const {data} = await api.get('/customer/logout')
+            
+            localStorage.removeItem('customerToken')
+            // console.log("data")
+            // console.log(data)
+            return fulfillWithValue(data)
+        } catch (error) {
+            return rejectWithValue(error.response.data)
+        }
+    }
+)
+
 const decodeToken = (token) => {
     if (token) {
         const userInfo = jwtDecode(token)
@@ -85,6 +102,19 @@ export const authReducer = createSlice({
             state.successMessage = payload.message;
             state.loader = false;
             state.userInfo = userInfo;
+        })
+        .addCase(customer_logout.pending, (state, _) => {
+            state.loader = true;
+        })
+        .addCase(customer_logout.rejected, (state, payload) => {
+            // console.log(payload.error)
+            state.errorMessage = payload.error.message;
+            state.loader = false;
+        })
+        .addCase(customer_logout.fulfilled, (state, { payload }) => {
+            state.successMessage = payload.message;
+            state.loader = false;
+            state.userInfo = "";
         })
     }
 })

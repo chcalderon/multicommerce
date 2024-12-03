@@ -91,10 +91,10 @@ const Header = () => {
                                 </div>
 
                                 {
-                                    userInfo ? <Link to={'/dashboard'} className='flex cursor-pointer justify-center items-center gap-2 text-sm text-black' to='/card'>
+                                    userInfo ? <Link to={'/dashboard'} className='flex cursor-pointer justify-center items-center gap-2 text-sm text-black'>
                                         <span> <FaUser /> </span>
                                         <span>{userInfo.name} </span>
-                                    </Link> : <Link to={'/login'} className='flex cursor-pointer justify-center items-center gap-2 text-sm text-black' to='/login'>
+                                    </Link> : <Link to={'/login'} className='flex cursor-pointer justify-center items-center gap-2 text-sm text-black'>
                                         <span> <FaLock /> </span>
                                         <span>Login </span>
                                     </Link>

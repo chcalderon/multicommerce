@@ -12,8 +12,8 @@ import { FadeLoader } from 'react-spinners';
 const Login = () => {
 
     const navigate = useNavigate()
-    const { loader, errorMessage, successMessage, userInfo } = useSelector(state => state.auth)
     const dispatch = useDispatch()
+    const { loader, errorMessage, successMessage, userInfo } = useSelector(state => state.auth)
 
     const [state, setState] = useState({
         email: '',
@@ -30,7 +30,10 @@ const Login = () => {
     const login = (e) => {
         e.preventDefault()
         dispatch(customer_login(state))
+        // navigate('/')
     }
+
+    
 
     useEffect(() => {
         if (successMessage) {

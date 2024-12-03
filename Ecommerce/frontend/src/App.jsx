@@ -53,6 +53,7 @@ function App() {
             <Route path='order/details/:orderId' element={<OrderDetails/>} />
             <Route path='chat' element={<Chat/>} /> 
             <Route path='chat/:sellerId' element={<Chat/>} /> 
+            
           </Route>
         </Route>
       </Routes>

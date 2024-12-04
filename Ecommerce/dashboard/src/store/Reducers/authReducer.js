@@ -246,11 +246,11 @@ export const authReducer = createSlice({
             .addCase(logout.rejected, (state, _) => {
                 state.loader = false;
             })
-            .addCase(logout.fulfilled, (state, _) => {
+            .addCase(logout.fulfilled, (state, { payload }) => {
                 state.loader = false;
                 state.userInfo = "";
                 state.token = null;
-                state.successMessage = "";
+                state.successMessage = payload.message;
             })
     }
 

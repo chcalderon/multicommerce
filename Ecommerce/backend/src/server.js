@@ -10,19 +10,17 @@ const socket = require('socket.io')
 const http = require('http')
 const https = require('https')
 
-// Certificados autofirmados (ajusta las rutas si necesario)
+// Certificados autofirmados (ajusta las rutas si necesario)   descomentar en prod
 const sslOptions = {
-    // key: fs.readFileSync('/etc/letsencrypt/live/ripsode.com/privkey.pem'),
-    // cert: fs.readFileSync('/etc/letsencrypt/live/ripsode.com/cert.pem'),
-    // ca: fs.readFileSync('/etc/letsencrypt/live/ripsode.com/chain.pem')
+    key: fs.readFileSync('/etc/letsencrypt/live/ripsode.com/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/ripsode.com/cert.pem'),
+    ca: fs.readFileSync('/etc/letsencrypt/live/ripsode.com/chain.pem')
 };
 
+// http en local https en prod
 // Crear servidores HTTP y HTTPS
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(sslOptions, app);
-
-const httpsPort = 443;
-
 
 app.use(cors({
     origin: ['http://localhost:3000', 'http://localhost:3001',
@@ -156,5 +154,5 @@ app.use('/api', require('./routes/dashboard/dashboardRoutes'))
 app.get('/', (req, res) => res.send("My backend"))
 const port = process.env.PORT
 dbConnect()
-httpServer.listen(port, () => console.log(`HTTP Server running on port ${port}`));
-//httpsServer.listen(port, () => console.log(`HTTPS Server running on port ${port}`));
+//httpServer.listen(port, () => console.log(`HTTP Server running on port ${port}`));
+httpsServer.listen(port, () => console.log(`HTTPS Server running on port ${port}`));
